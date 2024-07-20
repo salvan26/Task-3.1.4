@@ -10,23 +10,26 @@
   }
   
   body{
-      width: 100%;
-      min-width: 320px;
       font-family: "TT Lakes", "Arial", sans-serif;
   }
   
+  .header  {
+    border-bottom: 1px solid;
+    border-color: #D9FFF5;
+  }
+
   .header__inner {
       display: flex;
       flex-direction: row;
-      width: 100%;
+      width: auto;
       height: 88px;
       align-items: center;
-      justify-content:space-around;
-      border-bottom: 1px solid;
-      border-color: #D9FFF5;
+      justify-content:space-between;
+      margin-left: 15px;
+      margin-right: 15px;
   }
-  
-  .button-top{
+ 
+  .round-icon{
       background-repeat: no-repeat;
       background-position: center;
       background-color: #FF3E79;
@@ -36,9 +39,8 @@
       border: none;
   }
   
-  .button-top--menu{
+  .round-icon--menu{
       background-image: url(img/icon.png);
-      margin-right: 10px;
   }
   
   .header__logo::after {
@@ -51,35 +53,48 @@
       background-color: #EAEAEA;
   }
   
-  .button-top--work {
+  .round-icon--work {
       background-image: url(img/work-icon.png);
-      margin-right: 10px;
-      margin-left: auto;
   }
   
-  .button-top--search  {
-      background-image: url(img/search-icon.png);
-     
-     
+  .round-icon--search  {
+      background-image: url(img/search-icon.png);   
+  }
+
+  .header__left-side {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .header__right-side {
+    display: flex;
+    gap: 15px;
+  }
+
+  .button-hidder{
+    display: none;
   }
   
-  .button-top--call{
-      display: none;
+  .round-icon--call{
+    background-image: url(img/call.png);
   }
   
-  .button-top--chat{
-      display: none;
+  .round-icon--chat{
+    background-image: url(img/chat-icon.png);
   }
   
-  .button-top--profile{
-      display: none;
+  .round-icon--profile{
+    background-image: url(img/profile-icon.png);
   }
   
   .main__title {
-  
       display: flex;
       flex-direction: row;
       gap: 16px;
+      margin-top: 20px;
   }
   
   .main__text-button{
@@ -87,7 +102,6 @@
   }
   
   .main__h-title {
-      margin-top: 24px;
       font-size: 28px;
       line-height: 40px;
       font-weight: 700;
@@ -129,7 +143,6 @@
       height: 40px;
       padding: 0;
       margin: 0;
-     
   }
   
   .main__button{
@@ -152,21 +165,26 @@
       display: flex;
       flex-direction: column;
       margin-top: 15px;
-      width: 100%;
+      width: auto;
   }
   
   .main__info {
-      height: 100px;
-      overflow: hidden;
+      margin-left: 15px;
   }
   
+  .main__text-control{
+     height: 110px;
+     overflow: hidden;
+  }
+
   .main__paragraph{
-      margin-left: 25px;
+      margin-left: 5px;
   }
   
-  
-  
-  
+  .main__readmore-block {
+    margin-top: 10px;
+}
+
   .main__readmore-block {
       display: flex;
       text-decoration: none;
@@ -178,37 +196,26 @@
       border: none;
       background: transparent;
   }
+
   .main__readmore-block::before{
       content: "";
       width: 24px;
       height: 24px;
       background: url(img/link-icon.png) no-repeat 50% 50%;
-      
   }
-  
-  
   
   @media (min-width: 768px) {
   
-      body{
-          width: 100%;
-          margin: 0 auto;
-      }
-      
       .header__inner {
           display: flex;
           flex-direction: row;
-          width: 100%;
+          width: auto;
           height: 88px;
           align-items: center;
-          justify-content: flex-start;
+          justify-content: space-between;
           gap: 20px;
       }
-  
-      .button-top--menu {
-          margin-left: 20px;
-      }
-  
+
       .header__logo::after {
           display: none;
         
@@ -223,73 +230,60 @@
           background-color: #EAEAEA;
       }
   
-      .button-top--work {
-          border: none;
-          display: block;    
-          position: relative;
-          margin-left: 0;
-          margin-right: -10px;
-          
+      .button-hidder {
+         display: flex;
+         gap:  10px;
       }
-  
-      .button-top--work::before{
-          content: "";
-          position: absolute;
-          height: 32px;
-          width: 2px;
-          left:  -10px;
-          top: 5px;
-          background-color: #EAEAEA;
+      .button-hidder::after {
+         content: "";
+         background-color: #EAEAEA;
+         height: 32px;
+         width: 2px;
+         align-self: center;
       }
-  
-  
-      .button-top--search {
-          display: block;
-          margin-right: 2%;
-      }
-  
-      .button-top--call{
-          background-image: url(img/call.png);
-          display: block;
-          margin-left: auto;
-      }
-  
-      .button-top--chat{
-          background-image: url(img/chat-icon.png);
-          display: block;
-      }
-  
-      .button-top--profile{
-          background-image: url(img/profile-icon.png);
-          display: block;
-      }
-  
+
       .main__about-block {
           display: flex;
           flex-direction: row;
-          margin-top: 15px;
-          width: 100%;
+          justify-content: space-between;
+          width: auto;
+          gap: 15px;
+          flex-wrap: nowrap;
           overflow: hidden;
       }
   
       .main__info {
-          width: 60%;
-          height: 150px;
-          margin-right: 10%;
+          width:50%;
+          display: flex;
+          flex-direction: column;
       }
-  
+
+      .main__text-control{
+        height: 175px;
+      }
+
       .main__readmore-block {
-          position: absolute;
-          top: 76%;
-      }
+        margin-top: 15px;
+    }
+
+    .main__image{ 
+        flex-grow: 1;
+    }
+  
   
    }
-   @media (min-width: 1000px){
+   @media (min-width: 1120px){
       body{
-          width: 1120px;
-          margin-left: auto;
-          margin-right: auto;
+          width: 100%;
+          
       }
+
+      .width-control{
+        width: 1120px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
       .header__inner {
           display: none;
       }
@@ -305,19 +299,32 @@
           display: none;
       }
   
-  
       .main__title {
-          width: 950px;
+          width: 100%;
           margin-top: 24px;
           display: flex;
           flex-direction: row;
-          gap: 16px;
+          flex-wrap: nowrap;
+      }
+
+      .position-control{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 15px;
+        align-items: center;
+      }
+            
+      .wrap-control{
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
       }
   
       .main__text-button {
           display: flex;
           text-decoration: none;
-          
           box-sizing: border-box;
           white-space: nowrap;
           align-items: center;
@@ -325,10 +332,6 @@
           font-weight: 600;
           color: #1B1C21;
           
-      }
-   
-      .main__text-button:nth-child(2){
-          margin-left: 40%;
       }
   
       .button-work{
@@ -355,38 +358,41 @@
       }
   
       .main__menu-list{
+          width: 100%;
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
+          gap: 5px 22px;
       }
   
       .main__menu-slider {
-          width: 1100px;
+          width: 100%;
           overflow: visible;
           height: 82px;
-          gap: 10px;
+         
       }
   
       .main__about-block {
           display: flex;
           flex-direction: row;
-          width: 1050px;
+          width: auto;
+          justify-content: space-between;
+          margin-right: 10px;
       }
       
       .main__info{
-          width: 490px;
+          width: 100%;
           height: auto;
           font-size: 14px;
           line-height: 20px;
           letter-spacing: 0,2px;
           color: #1B1C21;
-          margin-right: 15%;
-  
       }
+
       .main__readmore-block {
-          position: absolute;
-          top: 500px;
-      }
+        margin-top: 5px;
+    }
+  
       .main__image{
           width: 100%;
           height: auto;
@@ -394,5 +400,3 @@
           object-fit: contain;
       }
    }
-   
-  
