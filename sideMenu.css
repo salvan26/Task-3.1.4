@@ -9,8 +9,8 @@
 }
 body{
     width: 320px;
+    height: 100vh;
     font-family: "TT Lakes", "Arial", sans-serif;
-    
 }
 
 .header{
@@ -18,19 +18,29 @@ body{
     position: fixed;
     top: 0;
     left: 0;
+ 
 }
 
 .header__inner{
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 320px;
     height: 88px;
     align-items: center;
-    gap: 20px;
-
+    gap: 25px;
+    justify-content: flex-start;
 }
 
-.button-top{
+.round-icon:first-child {
+    margin-left: 15px;
+}
+
+.round-icon:last-child {
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+.round-icon{
     background: #FF3E79 no-repeat center /16px;
     width: 40px;
     height: 40px;
@@ -38,38 +48,35 @@ body{
     border: none;
 }
 
-.button-top--menu{
+.round-icon--menu{
     background-image: url(img/burgerOpen.svg);
-    margin-left: 24px;
 }
 
-.button-top--menu:hover{
+.round-icon--menu:hover{
     opacity: 0.7;
     transform: rotateZ(45deg) scale(1.1);
     transition: 0.5s;
 }
 
-.button-top--search {
+.round-icon--search {
     background-image: url(img/search.svg);
-    margin-left: auto;
-    margin-right: 2%;
-    
 }
 
-.button-top--search:hover{
+.round-icon--search:hover{
     opacity: 0.5;
     transform: scale(1.1);
-    transition: 0.5s;
+    transition: .5s;
 }
 
-.button-top:active{
-    transition: 0.1s;
+.round-icon:active{
+    transition: box-shadow 0.1s;
     opacity: 1;
     box-shadow: 2px 2px 5px #FF3E79;
 }
 
 .menu-wrap {
     width: 222px;
+    height: 100vh;
 }
 
 .header__menu-list {
@@ -116,11 +123,12 @@ body{
 }
 
 .header__contacts {
-    margin-top: 50%;
+    margin-top:50%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     gap: 20px;
+    margin-left: 20px;
     justify-content: space-around;
 }
 
@@ -128,8 +136,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: space-evenly;
-    margin-left: 5px;
+    justify-content: flex-start;
 }
 
 .button-bot {
@@ -165,7 +172,6 @@ body{
 }
 
 .header__mail{
-    margin-left: 24px;
     font-size: 16px;
     line-height: 24px;
     color: #1B1C21;
@@ -176,15 +182,23 @@ body{
     font-size: 24px;
     line-height: 32px;
     font-weight: 800;
-    margin-left: 24px;
     font-family: inherit;
 }
 
+.header__phone a {
+    color:#1B1C21;
+}
+
 .header__lang {
+    margin-top: 10px;
     margin-left: 24px;
     font-size: 16px;
     line-height: 24px;
     font-family: inherit;
+}
+
+.lang-item {
+    color: #1B1C21;
 }
 
 .lang-item:hover{
